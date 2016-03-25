@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'tutorhunt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'main/templates/main'),],
+        'DIRS': [ os.path.join(BASE_DIR, 'main/templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "main/static/main"),
 ]
+
+#Registration Module 
+ACCOUNT_ACTIVATION_DAYS=7
+REGISTRATION_OPEN=True
