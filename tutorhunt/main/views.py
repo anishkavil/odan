@@ -13,6 +13,6 @@ def home(request):
         'k1': "latest_question_list",
     }
     
-    template = loader.get_template('index.html')
+    template = loader.get_template('main/index.html')
     return HttpResponse(template.render(context, request))
 
