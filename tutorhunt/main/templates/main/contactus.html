@@ -5,7 +5,7 @@
 	<link href="{% static "bootstrap/css/starter-template.css" %}" rel="stylesheet">	
 {% endblock %}
 
-{% block title %}Home Page{% endblock %}
+{% block title %}Contact Us{% endblock %}
 
 {% block content %} 
     
@@ -14,8 +14,19 @@
         <h1>Contact Us  </h1>
         <p class="lead">
         Call us @ 9971877125 Or 9958550975
-        
         </p>
+        <BR><BR>
+        <p>OR</p>
+        <BR><BR>
+        <form class="form" action="" method="post">
+        <table>
+            {{ form.as_table }}
+            <tr><td colspan=2><br><br><input class="btn" type="submit" value="Submit"></td></tr>
+        </table>
+        {% csrf_token %}
+        
+   		</form>
+        
       </div>
 
     </div><!-- /.container -->

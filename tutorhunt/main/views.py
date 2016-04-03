@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from main.forms import ContactForm
 
 # Create your views here.
 
@@ -32,8 +33,14 @@ def aboutus(request):
     return HttpResponse(template.render(cntxt,request))
 
 def contactus(request):
-    cntxt = {
+    
+    if request.method =='GET':
+        form = ContactForm()
+        return render(request, 'main/contactus.html', {'form': form})
+    else :
+        form = ContactForm(request.POST)
+        cntxt = {
              'rndmTxt' : 'The quick brown fox jumps over the little lazy dog',
              }
-    template = loader.get_template('main/contactus.html')
-    return HttpResponse(template.render(cntxt,request))
+        template = loader.get_template('main/contactus.html')
+        return HttpResponse(template.render(cntxt,request))
