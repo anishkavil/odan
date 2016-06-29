@@ -33,10 +33,16 @@ def aboutus(request):
     return HttpResponse(template.render(cntxt,request))
 
 def contactus(request):
+    values = request.META.items()
+    values.sort()
+    htmldata=[]
+    for k,v in values:
+         htmldata.append('<tr><td>%s</td><td>%s</td></tr>' % (k, v))
+         
     
     if request.method =='GET':
         form = ContactForm()
-        return render(request, 'main/contactus.html', {'form': form})
+        return render(request, 'main/contactus.html', {'form': form,'htmldata':htmldata})
     else :
         form = ContactForm(request.POST)
         cntxt = {
