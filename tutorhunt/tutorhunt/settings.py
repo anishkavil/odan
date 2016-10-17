@@ -113,6 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+# we made a change in the settings file
 
 TIME_ZONE = 'UTC'
 
@@ -131,6 +132,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "main/static/main"),
 ]
 
-#Registration Module 
+#Registration Module
 ACCOUNT_ACTIVATION_DAYS=7
 REGISTRATION_OPEN=True
